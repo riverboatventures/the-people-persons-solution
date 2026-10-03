@@ -1,0 +1,36 @@
+{
+  "name": "the-people-persons",
+  "private": true,
+  "version": "0.1.0",
+  "description": "The People Persons — a voice-driven Jarvis command center for a team of AI business agents.",
+  "type": "module",
+  "scripts": {
+    "dev": "concurrently -k -n api,ui -c cyan,magenta \"node --watch server/index.js\" \"vite\"",
+    "dev:ui": "vite",
+    "dev:api": "node --watch server/index.js",
+    "build": "tsc --noEmit && vite build",
+    "start": "npm run build && node server/index.js",
+    "serve": "node server/index.js",
+    "typecheck": "tsc --noEmit"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "@fontsource/jetbrains-mono": "^5.3.0",
+    "@fontsource/orbitron": "^5.3.0",
+    "@fontsource/rajdhani": "^5.3.0",
+    "lucide-react": "^1.50.0",
+    "react": "^19.3.0",
+    "react-dom": "^19.3.0"
+  },
+  "devDependencies": {
+    "@types/node": "^26.6.4",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "@vitejs/plugin-react": "^6.1.1",
+    "concurrently": "^10.0.5",
+    "typescript": "~5.9",
+    "vite": "^8.3.2"
+  }
+}
