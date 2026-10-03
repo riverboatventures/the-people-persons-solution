@@ -200,7 +200,7 @@ export function useVoice({ respond }: UseVoiceOptions) {
       setInterim(finalText + text);
     };
     rec.onerror = (e) => {
-      if (e.error === 'not-allowed' || e.error === 'service-not-allowed') setError('Microphone access was blocked. Allow it in your browser settings.');
+      if (e.error === 'not-allowed' || e.error === 'service-not-allowed') setError('Microphone access was blocked. Allow it in your browser settings, or type your command instead.');
       else if (e.error !== 'no-speech' && e.error !== 'aborted') setError(`Voice error: ${e.error}`);
     };
     rec.onend = () => {
